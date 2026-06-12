@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tufayel | Performance Marketer, Product Builder & Automations Guy</title>
+<meta name="description" content="100+ brands, $1M+ in media buying, and a dangerous habit of automating everything. Book a call before the ads do it for you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E1116;
+  --ink-2:#161B23;
+  --bone:#E9E4D8;
+  --signal:#FF4B26;
+  --slate:#8B93A1;
+  --line:rgba(233,228,216,.14);
+  --line-dark:rgba(14,17,22,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--bone);font-family:'Archivo',sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--signal);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+.display{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:.005em}
+.mono{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.wrap{max-width:1280px;margin:0 auto;padding:0 5vw}
+
+/* ---------- NAV ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:22px 5vw;mix-blend-mode:difference;color:#E9E4D8}
+nav .logo{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:.04em}
+nav ul{display:flex;gap:30px;list-style:none;align-items:center}
+nav ul a{font-size:14px;font-weight:500;opacity:.85;transition:opacity .2s}
+nav ul a:hover{opacity:1}
+nav .book-btn{border:1px solid #E9E4D8;border-radius:999px;padding:8px 20px;opacity:1!important}
+@media(max-width:760px){nav ul li:not(:last-child){display:none}}
+
+/* ---------- HERO ---------- */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-top{padding:0 5vw;margin-bottom:6vh}
+.hero-roles{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+.hero-roles span{border:1px solid var(--line);border-radius:999px;padding:8px 18px;font-size:13px;opacity:.9}
+.hero-roles span b{color:var(--signal);font-weight:600}
+.hero h1{
+  font-size:clamp(72px,16.5vw,250px);
+  background:linear-gradient(90deg,#E9E4D8 0%,#FF4B26 22%,#FFB36B 38%,#E9E4D8 55%,#FF4B26 78%,#E9E4D8 100%);
+  background-size:220% auto;
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;
+  animation:flow 7s linear infinite;
+}
+@keyframes flow{to{background-position:220% center}}
+.type-line{font-family:'JetBrains Mono',monospace;font-size:clamp(14px,1.6vw,18px);letter-spacing:.06em;color:var(--slate);margin-bottom:18px;min-height:1.6em}
+.type-line .typed{color:var(--bone)}
+.type-line .caret{display:inline-block;width:10px;height:1.15em;background:var(--signal);margin-left:4px;vertical-align:text-bottom;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;padding:0 5vw;margin-bottom:5vh;flex-wrap:wrap}
+.hero-sub p{max-width:520px;color:var(--slate);font-size:18px}
+.hero-stats{display:flex;gap:44px;text-align:right}
+.hero-stats .stat b{display:block;font-family:'Anton',sans-serif;font-size:clamp(30px,4vw,48px);color:var(--bone);line-height:1}
+.hero-stats .stat span{color:var(--slate);font-size:13px}
+.hero-stats .stat b i{color:var(--signal);font-style:normal}
+
+/* ---------- TICKER ---------- */
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+.ticker-track{display:flex;width:max-content;animation:scroll 28s linear infinite}
+.ticker-item{display:flex;align-items:center;gap:14px;padding:16px 32px;border-right:1px solid var(--line);white-space:nowrap}
+.ticker-item .k{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;color:var(--slate)}
+.ticker-item .v{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--bone)}
+.ticker-item .up{color:var(--signal)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- SHARED ---------- */
+section{padding:120px 0}
+.eyebrow{display:flex;align-items:center;gap:12px;color:var(--slate);margin-bottom:48px}
+.eyebrow::before{content:"";width:34px;height:1px;background:currentColor}
+.light{background:var(--bone);color:var(--ink)}
+.light .eyebrow{color:rgba(14,17,22,.55)}
+.h2{font-size:clamp(44px,7vw,104px)}
+.accent{color:var(--signal)}
+
+/* ---------- ABOUT ---------- */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:8vw;margin-top:56px}
+.about-grid p{font-size:19px;color:rgba(14,17,22,.78);margin-bottom:22px}
+.about-grid p b{color:var(--ink)}
+.about-side{border-left:1px solid var(--line-dark);padding-left:36px;align-self:start}
+.about-side .fact{padding:18px 0;border-bottom:1px solid var(--line-dark)}
+.about-side .fact:last-child{border-bottom:0}
+.about-side .fact .mono{color:rgba(14,17,22,.5);display:block;margin-bottom:4px}
+.about-side .fact span{font-weight:600;font-size:17px}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:48px}}
+
+/* ---------- TRACK RECORD : STACKING CARDS ---------- */
+.stack{display:flex;flex-direction:column;gap:28px;margin-top:70px}
+.card{
+  position:sticky;
+  background:var(--ink-2);
+  border:1px solid var(--line);
+  border-radius:26px;
+  padding:54px 50px;
+  display:grid;grid-template-columns:220px 1fr 360px;gap:40px;align-items:start;
+  box-shadow:0 -18px 50px rgba(0,0,0,.45);
+  will-change:transform;
+}
+.card:nth-child(1){top:96px}
+.card:nth-child(2){top:124px}
+.card:nth-child(3){top:152px}
+.card:nth-child(4){top:180px}
+.card .meta{color:var(--slate)}
+.card .meta .mono{display:block;margin-bottom:8px;color:var(--signal)}
+.card h3{font-family:'Anton',sans-serif;font-size:clamp(30px,3.6vw,52px);text-transform:uppercase;line-height:1;margin-bottom:18px}
+.card ul{list-style:none}
+.card ul li{padding:8px 0;color:var(--slate);border-bottom:1px dashed var(--line);font-size:15.5px}
+.card ul li b{color:var(--bone);font-weight:600}
+.card ul li:last-child{border-bottom:0}
+.card .desc{color:var(--slate);font-size:16.5px;max-width:560px}
+@media(max-width:1000px){.card{grid-template-columns:1fr;gap:22px;padding:40px 30px}}
+
+/* ---------- EXPERTISE ---------- */
+.tags{display:flex;flex-wrap:wrap;gap:14px;margin-top:54px}
+.tags span{border:1px solid var(--line-dark);border-radius:999px;padding:13px 26px;font-size:16px;font-weight:500;transition:all .25s;cursor:default}
+.tags span:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.tags span.hot{background:var(--signal);border-color:var(--signal);color:#fff}
+.exp-lede{max-width:680px;font-size:19px;color:rgba(14,17,22,.75);margin-top:40px}
+
+/* ---------- OFFSTAGE (hobby) ---------- */
+.offstage{background:var(--signal);color:#fff;padding:90px 0}
+.offstage .h2{color:#fff}
+.offstage p{max-width:640px;font-size:19px;margin-top:30px;color:rgba(255,255,255,.92)}
+.offstage .mic{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.85;margin-bottom:20px;display:block}
+
+/* ---------- TESTIMONIALS ---------- */
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:64px}
+.quote{background:var(--ink);padding:48px 42px}
+.quote p{color:var(--slate);font-size:16.5px;margin-bottom:30px}
+.quote p b{color:var(--bone)}
+.quote .who{display:flex;align-items:center;gap:14px}
+.quote .who .badge{width:42px;height:42px;border-radius:50%;background:var(--signal);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:18px}
+.quote .who span{font-size:14px;font-weight:500;color:var(--bone)}
+@media(max-width:860px){.quotes{grid-template-columns:1fr}}
+
+/* ---------- BOOKING ---------- */
+.booking{background:var(--bone);color:var(--ink)}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:6vw;margin-top:60px}
+@media(max-width:920px){.book-grid{grid-template-columns:1fr;gap:48px}}
+.book-left p{font-size:19px;color:rgba(14,17,22,.78);margin-bottom:20px}
+.book-left p b{color:var(--ink)}
+.slot-label{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(14,17,22,.5);display:block;margin:26px 0 12px}
+.days,.times{display:flex;flex-wrap:wrap;gap:10px}
+.pill{border:1px solid var(--line-dark);border-radius:14px;padding:12px 16px;background:transparent;font-family:'Archivo',sans-serif;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s;color:var(--ink)}
+.pill small{display:block;font-size:11px;color:rgba(14,17,22,.5);font-family:'JetBrains Mono',monospace}
+.pill:hover{border-color:var(--ink)}
+.pill.on{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.pill.on small{color:var(--slate)}
+.field{margin-top:18px}
+.field input,.field textarea,.field select{width:100%;border:1px solid var(--line-dark);border-radius:14px;padding:15px 16px;font-family:'Archivo',sans-serif;font-size:16px;background:#fff;color:var(--ink);outline:none;transition:border-color .2s}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--signal)}
+.field textarea{min-height:96px;resize:vertical}
+.submit-btn{margin-top:24px;width:100%;border:0;border-radius:999px;background:var(--signal);color:#fff;font-family:'Anton',sans-serif;font-size:20px;letter-spacing:.04em;text-transform:uppercase;padding:20px;cursor:pointer;transition:transform .15s, box-shadow .2s}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,75,38,.35)}
+.submit-btn:active{transform:translateY(0)}
+.book-note{font-size:13px;color:rgba(14,17,22,.5);margin-top:14px;text-align:center}
+.confirm{display:none;border:1px solid var(--line-dark);border-radius:18px;padding:40px;text-align:center;background:#fff}
+.confirm h3{font-family:'Anton',sans-serif;font-size:32px;text-transform:uppercase;margin-bottom:12px}
+.confirm p{color:rgba(14,17,22,.7)}
+
+/* ---------- CONTACT ---------- */
+.contact{padding-bottom:0}
+.contact .email{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:clamp(16px,2.4vw,24px);border:1px solid var(--line);border-radius:999px;padding:18px 38px;margin-top:30px;transition:all .25s}
+.contact .email:hover{background:var(--signal);border-color:var(--signal);color:#fff}
+.contact .socials{display:flex;gap:28px;margin-top:46px}
+.contact .socials a{color:var(--slate);font-size:15px;transition:color .2s}
+.contact .socials a:hover{color:var(--bone)}
+.footer-mark{margin-top:110px;border-top:1px solid var(--line);overflow:hidden}
+.footer-mark .display{font-size:clamp(70px,15vw,230px);color:var(--ink-2);-webkit-text-stroke:1px rgba(233,228,216,.25);text-align:center;transform:translateY(12%)}
+.footer-bottom{display:flex;justify-content:space-between;padding:22px 5vw;color:var(--slate);font-size:13px;border-top:1px solid var(--line)}
+
+/* ---------- CUSTOM CURSOR ---------- */
+.cursor{position:fixed;top:0;left:0;width:12px;height:12px;border-radius:50%;background:var(--signal);pointer-events:none;z-index:200;transform:translate(-50%,-50%)}
+.cursor-ring{position:fixed;top:0;left:0;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--signal);pointer-events:none;z-index:199;transform:translate(-50%,-50%);transition:width .3s ease,height .3s ease,background .3s ease,border-color .3s}
+.cursor-ring.hov{width:90px;height:90px;background:rgba(255,75,38,.95);border-color:transparent;mix-blend-mode:difference}
+@media(hover:none),(pointer:coarse){.cursor,.cursor-ring{display:none}}
+
+/* ---------- REVEALS ---------- */
+.reveal{opacity:0;transform:translateY(36px)}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1!important;transform:none!important}
+  .ticker-track{animation:none}
+  .hero h1{animation:none;color:var(--bone);background:none;-webkit-background-clip:initial}
+  .type-line .caret{animation:none}
+  .cursor,.cursor-ring{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<nav>
+  <a class="logo" href="#top">Tufayel<span style="color:var(--signal)">.</span></a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#track">Track record</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#words">Words</a></li>
+    <li><a class="book-btn" href="#book">Book a call</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-top">
+    <div class="hero-roles">
+      <span>Performance <b>Marketer</b></span>
+      <span>Product <b>Builder</b></span>
+      <span>Automations <b>Expert</b></span>
+      <span>Occasionally <b>Funny</b></span>
+    </div>
+    <div class="type-line"><span style="color:var(--slate)">$</span> I <span class="typed" id="typed"></span><span class="caret"></span></div>
+    <h1 class="display">Tufayel</h1>
+  </div>
+  <div class="hero-sub">
+    <p>I make ad budgets behave, build products that do my job while I sleep, and yes, the spreadsheets have jokes in them. Spend money. Make more money. Repeat with style.</p>
+    <div class="hero-stats">
+      <div class="stat"><b>100<i>+</i></b><span>brands worked with</span></div>
+      <div class="stat"><b>$1M<i>+</i></b><span>in media buying</span></div>
+    </div>
+  </div>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="ticker"></div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section class="light" id="about">
+  <div class="wrap">
+    <div class="eyebrow mono reveal">About me</div>
+    <h2 class="h2 display reveal">Growth is a system,<br>not a <span class="accent">lucky ad</span></h2>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>I live inside ad accounts: <b>search, social, programmatic</b>. Over 100 brands have handed me budgets, and more than a million dollars later, I can tell you exactly which platform is lying to you this week.</p>
+        <p>And because I physically cannot watch someone do a task twice, I build things. <b>Ops platforms, AI video pipelines, reporting machines</b>. If a workflow takes ten hours, give me a weekend and it takes one click.</p>
+        <p>The recipe never changes: <b>spot the gap, move fast, measure everything</b>, then make the win repeat itself like a good chorus.</p>
+      </div>
+      <div class="about-side reveal">
+        <div class="fact"><span class="mono">Channels</span><span>Google · Meta · TikTok · DSP</span></div>
+        <div class="fact"><span class="mono">Verticals</span><span>iGaming · Telecom · B2B SaaS · EdTech</span></div>
+        <div class="fact"><span class="mono">Stack</span><span>GTM · GA4 · Next.js · Supabase · n8n · LLMs</span></div>
+        <div class="fact"><span class="mono">Operating mode</span><span>Ship fast, laugh louder</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACK RECORD -->
+<section id="track">
+  <div class="wrap">
+    <div class="eyebrow mono reveal">Track record</div>
+    <h2 class="h2 display reveal">What I've <span class="accent">built</span><br>& run</h2>
+    <div class="stack">
+
+      <div class="card">
+        <div class="meta"><span class="mono">Performance</span>2024, still going</div>
+        <div>
+          <h3>Media Buyer, B2B Agency</h3>
+          <p class="desc">Running paid acquisition for a European performance agency tied to a programmatic DSP. Agency lead gen plus client accounts in iGaming and telecom, all on real tracking instead of vibes.</p>
+        </div>
+        <ul>
+          <li>Full-funnel <b>Search + PMax + Retargeting</b> architecture</li>
+          <li>Built tracking end to end: <b>MCC, GTM, GA4, conversion APIs</b></li>
+          <li>Multi-platform: <b>Google, Meta, TikTok, DSP</b></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="meta"><span class="mono">Product</span>Nights & weekends</div>
+        <div>
+          <h3>Builder, AI Tools</h3>
+          <p class="desc">A content automation suite, because editing clips by hand is a punishment from the past. Local AI clipping plus bulk scheduling for an unreasonable number of videos.</p>
+        </div>
+        <ul>
+          <li><b>ClipForge</b>: AI clipping with Whisper, LLMs & Remotion</li>
+          <li><b>ClipCast</b>: scheduling 100+ videos across IG, TikTok, FB & YT</li>
+          <li><b>Agency OS</b>: internal ops platform with CRM, finance, kanban</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="meta"><span class="mono">Founder</span>Ongoing</div>
+        <div>
+          <h3>RizeUp Global</h3>
+          <p class="desc">A study-abroad consultancy helping students reach international universities. Brand, website and growth all built in-house, with the same playbook I run for clients.</p>
+        </div>
+        <ul>
+          <li>Site designed, built & <b>deployed in a day</b></li>
+          <li>Lead funnel run on <b>the playbook I actually sell</b></li>
+          <li>Proof the system works <b>outside ad accounts too</b></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="meta"><span class="mono">Automation</span>Always on</div>
+        <div>
+          <h3>Systems & Workflows</h3>
+          <p class="desc">The connective tissue: trackers, dashboards, AI agents and pipelines that quietly delete the boring half of marketing operations.</p>
+        </div>
+        <ul>
+          <li>Multi-platform <b>reporting & ad policy</b> tooling</li>
+          <li>Affiliate arbitrage stacks with <b>Voluum + push/pop networks</b></li>
+          <li>AI assistants for <b>briefings, inbox & campaign ops</b></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="light" id="expertise">
+  <div class="wrap">
+    <div class="eyebrow mono reveal">Expertise</div>
+    <h2 class="h2 display reveal">Your growth<br>× <span class="accent">10?</span></h2>
+    <p class="exp-lede reveal">I work best with brands and founders who want speed with receipts: clear targets, honest reporting, and systems that keep printing after I log off.</p>
+    <div class="tags reveal">
+      <span class="hot">Google Ads</span>
+      <span class="hot">Meta Ads</span>
+      <span class="hot">TikTok Ads</span>
+      <span class="hot">Programmatic / DSP</span>
+      <span>Media Planning</span>
+      <span>GTM & GA4</span>
+      <span>Conversion Tracking</span>
+      <span>CRO</span>
+      <span>iGaming Compliance</span>
+      <span>Affiliate Arbitrage</span>
+      <span>Funnel Building</span>
+      <span>Landing Pages</span>
+      <span>AI Automation</span>
+      <span>LLM Workflows</span>
+      <span>n8n / No-code</span>
+      <span>Next.js & Supabase</span>
+      <span>Dashboards & Reporting</span>
+      <span>Video Pipelines</span>
+    </div>
+  </div>
+</section>
+
+<!-- OFFSTAGE -->
+<section class="offstage">
+  <div class="wrap reveal">
+    <span class="mic">Offstage / Onstage</span>
+    <h2 class="h2 display">Also: I do<br>standup</h2>
+    <p>When the dashboards close, I grab a mic. Standup comedy keeps the timing sharp and the ego humble, because nothing teaches you about audience targeting like a joke dying in a quiet room. If your last agency call felt like a funeral, I'm the upgrade.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="words">
+  <div class="wrap">
+    <div class="eyebrow mono reveal">Words</div>
+    <h2 class="h2 display reveal">What people<br><span class="accent">say</span></h2>
+    <div class="quotes reveal">
+      <div class="quote">
+        <p>"Tufayel doesn't just run the campaigns. He rebuilt our entire tracking setup first, so every decision after that was made on <b>real data</b>. CPA dropped because the foundation was finally right."</p>
+        <div class="who"><div class="badge">A</div><span>Agency Lead / Performance Marketing</span></div>
+      </div>
+      <div class="quote">
+        <p>"The fastest builder I've worked with. He scoped, designed and shipped our internal tool while everyone else was still <b>writing the brief</b>."</p>
+        <div class="who"><div class="badge">P</div><span>Product Partner / SaaS</span></div>
+      </div>
+      <div class="quote">
+        <p>"Direct, organized, and relentless about removing manual work. Every week something that used to take hours becomes <b>a button</b>."</p>
+        <div class="who"><div class="badge">O</div><span>Operations / Media Team</span></div>
+      </div>
+      <div class="quote">
+        <p>"He understands both the media buying and the engineering. That combo is <b>rare</b>, and honestly, the meetings are funnier too."</p>
+        <div class="who"><div class="badge">C</div><span>Client / iGaming Brand</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="book">
+  <div class="wrap">
+    <div class="eyebrow mono reveal">Book a call</div>
+    <h2 class="h2 display reveal">Grab 30 minutes<br>before the <span class="accent">algorithm</span> does</h2>
+    <div class="book-grid">
+      <div class="book-left reveal">
+        <p><b>Here's the deal:</b> pick a day, pick a time, tell me what's broken (or what's about to be great). I show up with questions, ideas and zero corporate small talk.</p>
+        <p>Good fits: paid media audits, scaling plans, tracking rescues, automation builds, or "we have budget and no idea where it goes" situations.</p>
+        <p>Bad fits: anything that starts with "we just need it to go viral."</p>
+      </div>
+      <div class="reveal">
+        <form name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="bookForm">
+          <input type="hidden" name="form-name" value="booking">
+          <p style="display:none"><input name="bot-field"></p>
+          <input type="hidden" name="day" id="dayInput">
+          <input type="hidden" name="time" id="timeInput">
+
+          <span class="slot-label">01 / Pick a day</span>
+          <div class="days" id="days"></div>
+
+          <span class="slot-label">02 / Pick a time (your timezone)</span>
+          <div class="times" id="times"></div>
+
+          <span class="slot-label">03 / Who's calling</span>
+          <div class="field"><input type="text" name="name" placeholder="Your name" required></div>
+          <div class="field"><input type="email" name="email" placeholder="Your email" required></div>
+          <div class="field">
+            <select name="topic" required>
+              <option value="" disabled selected>What's this about?</option>
+              <option>Paid media audit</option>
+              <option>Scaling campaigns</option>
+              <option>Tracking & analytics rescue</option>
+              <option>Automation / AI build</option>
+              <option>Something else entirely</option>
+            </select>
+          </div>
+          <div class="field"><textarea name="details" placeholder="Give me the short version. Bullet points welcome, novels tolerated."></textarea></div>
+
+          <button class="submit-btn" type="submit">Lock it in</button>
+          <p class="book-note">Lands straight in my inbox via Netlify Forms. You'll get a confirm within 24 hours, usually faster.</p>
+        </form>
+        <div class="confirm" id="confirm">
+          <h3>Booked* <span class="accent">🎤</span></h3>
+          <p>*Pending my human confirmation, which is coming fast. Check your inbox soon. Bring numbers, I'll bring ideas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow mono reveal">Contact</div>
+    <h2 class="h2 display reveal">Let's make<br>numbers <span class="accent">move</span></h2>
+    <a class="email reveal" href="mailto:hello@tufayel.com?subject=Hi%20Tufayel">hello@tufayel.com</a>
+    <div class="socials reveal">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/Tufaye1" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram ↗</a>
+    </div>
+  </div>
+  <div class="footer-mark" aria-hidden="true">
+    <div class="display">Tufayel</div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Tufayel</span>
+    <span>Performance × Product × Automation × One Mic</span>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+// ---- Metrics ticker ----
+const metrics = [
+  ["BRANDS","100+",""],["MEDIA BOUGHT","$1M+","up"],["ROAS","4.2x","up"],
+  ["CPA","-38%","up"],["CTR","2.9%","up"],["MARKETS","20+",""],
+  ["HOURS AUTOMATED","120/mo","up"],["TOOLS SHIPPED","5",""],
+  ["LEADS","+214%","up"],["JOKES LANDED","most",""]
+];
+const track = document.getElementById('ticker');
+let h = "";
+for (let r = 0; r < 2; r++) {
+  metrics.forEach(([k,v,u]) => {
+    h += `<div class="ticker-item"><span class="k">${k}</span><span class="v ${u}">${u?'▲ ':''}${v}</span></div>`;
+  });
+}
+track.innerHTML = h;
+
+// ---- Booking: days & times ----
+const daysEl = document.getElementById('days');
+const timesEl = document.getElementById('times');
+const dayInput = document.getElementById('dayInput');
+const timeInput = document.getElementById('timeInput');
+const fmt = new Intl.DateTimeFormat('en', {weekday:'short'});
+const fmt2 = new Intl.DateTimeFormat('en', {month:'short', day:'numeric'});
+
+let added = 0, d = new Date();
+while (added < 6) {
+  d.setDate(d.getDate() + 1);
+  if (d.getDay() === 0) continue;            // skip Sundays
+  const label = fmt.format(d), date = fmt2.format(d);
+  const btn = document.createElement('button');
+  btn.type = 'button'; btn.className = 'pill';
+  btn.innerHTML = `${label}<small>${date}</small>`;
+  btn.dataset.val = `${label} ${date}`;
+  btn.onclick = () => pick(daysEl, btn, dayInput);
+  daysEl.appendChild(btn);
+  added++;
+}
+["10:00","12:00","15:00","17:00","19:00","21:00"].forEach(t => {
+  const btn = document.createElement('button');
+  btn.type = 'button'; btn.className = 'pill'; btn.textContent = t;
+  btn.dataset.val = t;
+  btn.onclick = () => pick(timesEl, btn, timeInput);
+  timesEl.appendChild(btn);
+});
+function pick(group, btn, input){
+  group.querySelectorAll('.pill').forEach(p => p.classList.remove('on'));
+  btn.classList.add('on');
+  input.value = btn.dataset.val;
+}
+
+// ---- Submit handling (AJAX to Netlify, instant confirm) ----
+const form = document.getElementById('bookForm');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (!dayInput.value || !timeInput.value) {
+    alert('Pick a day and a time first. The calendar is shy but it works.');
+    return;
+  }
+  const data = new URLSearchParams(new FormData(form));
+  try { await fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:data}); } catch(_){}
+  form.style.display = 'none';
+  document.getElementById('confirm').style.display = 'block';
+});
+
+// ---- GSAP reveals + stacking cards ----
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!reduced && window.gsap) {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from('.hero h1', {y:90, opacity:0, duration:1.1, ease:'power3.out', delay:.15});
+  gsap.from('.hero-roles span', {y:24, opacity:0, duration:.7, stagger:.09, ease:'power2.out', delay:.35});
+  gsap.from('.hero-sub > *', {y:24, opacity:0, duration:.8, stagger:.12, ease:'power2.out', delay:.6});
+  document.querySelectorAll('.reveal').forEach(el => {
+    gsap.to(el, {opacity:1, y:0, duration:.9, ease:'power3.out',
+      scrollTrigger:{trigger:el, start:'top 86%'}});
+  });
+  // stacking cards: earlier cards shrink + dim as the next one arrives
+  const cards = gsap.utils.toArray('.stack .card');
+  cards.forEach((card, i) => {
+    if (i === cards.length - 1) return;
+    gsap.to(card, {
+      scale: .94 - (cards.length - 2 - i) * .015,
+      filter: 'brightness(.65)',
+      transformOrigin: 'center top',
+      ease: 'none',
+      scrollTrigger: {trigger: cards[i + 1], start: 'top bottom', end: 'top 120px', scrub: true}
+    });
+  });
+} else {
+  document.querySelectorAll('.reveal').forEach(el => {el.style.opacity=1; el.style.transform='none';});
+}
+
+// ---- Typewriter ----
+const phrases = [
+  "scale ad accounts.",
+  "kill bad CPAs.",
+  "build AI tools at 2am.",
+  "automate the boring 80%.",
+  "do standup. on purpose.",
+  "make numbers move."
+];
+const typedEl = document.getElementById('typed');
+if (reduced) {
+  typedEl.textContent = phrases[0];
+} else {
+  let pi = 0, ci = 0, deleting = false;
+  (function type(){
+    const word = phrases[pi];
+    typedEl.textContent = word.slice(0, ci);
+    let delay = deleting ? 34 : 62;
+    if (!deleting && ci === word.length) { delay = 1500; deleting = true; }
+    else if (deleting && ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; delay = 350; }
+    ci += deleting ? -1 : 1;
+    setTimeout(type, delay);
+  })();
+}
+
+// ---- Custom cursor: lerped dot + ring, grows on hover, magnetic buttons ----
+const dot = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+const fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+if (fine && !reduced) {
+  let mx = innerWidth/2, my = innerHeight/2, rx = mx, ry = my;
+  addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  (function loop(){
+    rx += (mx - rx) * .16; ry += (my - ry) * .16;          // ring lags = liquid feel
+    dot.style.transform  = `translate(${mx}px,${my}px) translate(-50%,-50%)`;
+    ring.style.transform = `translate(${rx}px,${ry}px) translate(-50%,-50%)`;
+    requestAnimationFrame(loop);
+  })();
+  const hovers = 'a, button, .pill, .tags span, .ticker-item, input, select, textarea';
+  document.querySelectorAll(hovers).forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('hov'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('hov'));
+  });
+  // magnetic pull on the big CTA buttons
+  document.querySelectorAll('.submit-btn, .book-btn, .email').forEach(el => {
+    el.addEventListener('mousemove', e => {
+      const r = el.getBoundingClientRect();
+      gsap.to(el, {x:(e.clientX - r.left - r.width/2)*.25, y:(e.clientY - r.top - r.height/2)*.35, duration:.3});
+    });
+    el.addEventListener('mouseleave', () => gsap.to(el, {x:0, y:0, duration:.45, ease:'elastic.out(1,.4)'}));
+  });
+} else {
+  if (dot) dot.style.display = 'none';
+  if (ring) ring.style.display = 'none';
+}
+</script>
+</body>
+</html>
