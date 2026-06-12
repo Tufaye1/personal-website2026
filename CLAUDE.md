@@ -7,8 +7,7 @@ Tufayel's personal portfolio + call booking site. Single-page, zero framework, d
 - `index.html` — the ENTIRE site: HTML + CSS + JS in one file. No build step. No bundler. Keep it that way.
 - GSAP 3.12 + ScrollTrigger via cdnjs (animations)
 - Google Fonts: Anton (display), Archivo (body), JetBrains Mono (metrics/labels)
-- Netlify Forms — the booking form (`name="booking"`, `data-netlify="true"`)
-- `netlify/functions/submission-created.js` — auto-fires on every form submission, sends the client a confirmation email via Brevo API
+- Calendly inline embed for booking (handles scheduling, confirmations, and reminders)
 
 ## Design system (do not drift)
 - Colors: ink `#0E1116`, ink-2 `#161B23`, bone `#E9E4D8`, signal `#FF4B26`, slate `#8B93A1` (CSS vars in `:root`)
@@ -21,20 +20,13 @@ Tufayel's personal portfolio + call booking site. Single-page, zero framework, d
 2. Keep everything in one `index.html`. Do not split into multiple files or add a framework unless explicitly asked.
 3. All animations must respect `prefers-reduced-motion` (existing pattern is in the file, follow it).
 4. Custom cursor and typewriter must stay disabled on touch devices.
-5. Booking form: never rename `name="booking"` or remove `data-netlify="true"` / the hidden `form-name` input, or Netlify Forms breaks.
-6. The function MUST stay named `submission-created.js` — that exact name is what makes Netlify trigger it on form submissions.
-
-## Env vars (set in Netlify dashboard, never commit)
-- `BREVO_API_KEY` — Brevo API key
-- `FROM_EMAIL` — verified Brevo sender
-- `FROM_NAME` — "Tufayel"
+5. Booking: the Calendly embed URL is `https://calendly.com/tufayelhossain20/30min`. Do not remove the `?hide_gdpr_banner=1&background_color=...` query params that match our design system.
 
 ## Local dev
 ```bash
 npm i -g netlify-cli   # once
-netlify dev            # serves site + functions at localhost:8888
+netlify dev            # serves site at localhost:8888
 ```
-Note: form submissions only persist on the real deployed site, not locally.
 
 ## Deploy
 Push to `main` → Netlify auto-deploys (once repo is connected). That's it.

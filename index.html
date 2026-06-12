@@ -146,24 +146,7 @@ section{padding:120px 0}
 @media(max-width:920px){.book-grid{grid-template-columns:1fr;gap:48px}}
 .book-left p{font-size:19px;color:rgba(14,17,22,.78);margin-bottom:20px}
 .book-left p b{color:var(--ink)}
-.slot-label{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(14,17,22,.5);display:block;margin:26px 0 12px}
-.days,.times{display:flex;flex-wrap:wrap;gap:10px}
-.pill{border:1px solid var(--line-dark);border-radius:14px;padding:12px 16px;background:transparent;font-family:'Archivo',sans-serif;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s;color:var(--ink)}
-.pill small{display:block;font-size:11px;color:rgba(14,17,22,.5);font-family:'JetBrains Mono',monospace}
-.pill:hover{border-color:var(--ink)}
-.pill.on{background:var(--ink);color:var(--bone);border-color:var(--ink)}
-.pill.on small{color:var(--slate)}
-.field{margin-top:18px}
-.field input,.field textarea,.field select{width:100%;border:1px solid var(--line-dark);border-radius:14px;padding:15px 16px;font-family:'Archivo',sans-serif;font-size:16px;background:#fff;color:var(--ink);outline:none;transition:border-color .2s}
-.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--signal)}
-.field textarea{min-height:96px;resize:vertical}
-.submit-btn{margin-top:24px;width:100%;border:0;border-radius:999px;background:var(--signal);color:#fff;font-family:'Anton',sans-serif;font-size:20px;letter-spacing:.04em;text-transform:uppercase;padding:20px;cursor:pointer;transition:transform .15s, box-shadow .2s}
-.submit-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,75,38,.35)}
-.submit-btn:active{transform:translateY(0)}
-.book-note{font-size:13px;color:rgba(14,17,22,.5);margin-top:14px;text-align:center}
-.confirm{display:none;border:1px solid var(--line-dark);border-radius:18px;padding:40px;text-align:center;background:#fff}
-.confirm h3{font-family:'Anton',sans-serif;font-size:32px;text-transform:uppercase;margin-bottom:12px}
-.confirm p{color:rgba(14,17,22,.7)}
+.calendly-wrap{border-radius:18px;overflow:hidden}
 
 /* ---------- CONTACT ---------- */
 .contact{padding-bottom:0}
@@ -392,41 +375,9 @@ section{padding:120px 0}
         <p>Good fits: paid media audits, scaling plans, tracking rescues, automation builds, or "we have budget and no idea where it goes" situations.</p>
         <p>Bad fits: anything that starts with "we just need it to go viral."</p>
       </div>
-      <div class="reveal">
-        <form name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="bookForm">
-          <input type="hidden" name="form-name" value="booking">
-          <p style="display:none"><input name="bot-field"></p>
-          <input type="hidden" name="day" id="dayInput">
-          <input type="hidden" name="time" id="timeInput">
-
-          <span class="slot-label">01 / Pick a day</span>
-          <div class="days" id="days"></div>
-
-          <span class="slot-label">02 / Pick a time (your timezone)</span>
-          <div class="times" id="times"></div>
-
-          <span class="slot-label">03 / Who's calling</span>
-          <div class="field"><input type="text" name="name" placeholder="Your name" required></div>
-          <div class="field"><input type="email" name="email" placeholder="Your email" required></div>
-          <div class="field">
-            <select name="topic" required>
-              <option value="" disabled selected>What's this about?</option>
-              <option>Paid media audit</option>
-              <option>Scaling campaigns</option>
-              <option>Tracking & analytics rescue</option>
-              <option>Automation / AI build</option>
-              <option>Something else entirely</option>
-            </select>
-          </div>
-          <div class="field"><textarea name="details" placeholder="Give me the short version. Bullet points welcome, novels tolerated."></textarea></div>
-
-          <button class="submit-btn" type="submit">Lock it in</button>
-          <p class="book-note">Lands straight in my inbox via Netlify Forms. You'll get a confirm within 24 hours, usually faster.</p>
-        </form>
-        <div class="confirm" id="confirm">
-          <h3>Booked* <span class="accent">🎤</span></h3>
-          <p>*Pending my human confirmation, which is coming fast. Check your inbox soon. Bring numbers, I'll bring ideas.</p>
-        </div>
+      <div class="reveal calendly-wrap">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/tufayelhossain20/30min?hide_gdpr_banner=1&background_color=0e1116&text_color=e9e4d8&primary_color=ff4b26" style="min-width:320px;height:700px;"></div>
+        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </div>
     </div>
   </div>
@@ -471,54 +422,6 @@ for (let r = 0; r < 2; r++) {
   });
 }
 track.innerHTML = h;
-
-// ---- Booking: days & times ----
-const daysEl = document.getElementById('days');
-const timesEl = document.getElementById('times');
-const dayInput = document.getElementById('dayInput');
-const timeInput = document.getElementById('timeInput');
-const fmt = new Intl.DateTimeFormat('en', {weekday:'short'});
-const fmt2 = new Intl.DateTimeFormat('en', {month:'short', day:'numeric'});
-
-let added = 0, d = new Date();
-while (added < 6) {
-  d.setDate(d.getDate() + 1);
-  if (d.getDay() === 0) continue;            // skip Sundays
-  const label = fmt.format(d), date = fmt2.format(d);
-  const btn = document.createElement('button');
-  btn.type = 'button'; btn.className = 'pill';
-  btn.innerHTML = `${label}<small>${date}</small>`;
-  btn.dataset.val = `${label} ${date}`;
-  btn.onclick = () => pick(daysEl, btn, dayInput);
-  daysEl.appendChild(btn);
-  added++;
-}
-["10:00","12:00","15:00","17:00","19:00","21:00"].forEach(t => {
-  const btn = document.createElement('button');
-  btn.type = 'button'; btn.className = 'pill'; btn.textContent = t;
-  btn.dataset.val = t;
-  btn.onclick = () => pick(timesEl, btn, timeInput);
-  timesEl.appendChild(btn);
-});
-function pick(group, btn, input){
-  group.querySelectorAll('.pill').forEach(p => p.classList.remove('on'));
-  btn.classList.add('on');
-  input.value = btn.dataset.val;
-}
-
-// ---- Submit handling (AJAX to Netlify, instant confirm) ----
-const form = document.getElementById('bookForm');
-form.addEventListener('submit', async e => {
-  e.preventDefault();
-  if (!dayInput.value || !timeInput.value) {
-    alert('Pick a day and a time first. The calendar is shy but it works.');
-    return;
-  }
-  const data = new URLSearchParams(new FormData(form));
-  try { await fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:data}); } catch(_){}
-  form.style.display = 'none';
-  document.getElementById('confirm').style.display = 'block';
-});
 
 // ---- GSAP reveals + stacking cards ----
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -585,13 +488,13 @@ if (fine && !reduced) {
     ring.style.transform = `translate(${rx}px,${ry}px) translate(-50%,-50%)`;
     requestAnimationFrame(loop);
   })();
-  const hovers = 'a, button, .pill, .tags span, .ticker-item, input, select, textarea';
+  const hovers = 'a, button, .tags span, .ticker-item';
   document.querySelectorAll(hovers).forEach(el => {
     el.addEventListener('mouseenter', () => ring.classList.add('hov'));
     el.addEventListener('mouseleave', () => ring.classList.remove('hov'));
   });
   // magnetic pull on the big CTA buttons
-  document.querySelectorAll('.submit-btn, .book-btn, .email').forEach(el => {
+  document.querySelectorAll('.book-btn, .email').forEach(el => {
     el.addEventListener('mousemove', e => {
       const r = el.getBoundingClientRect();
       gsap.to(el, {x:(e.clientX - r.left - r.width/2)*.25, y:(e.clientY - r.top - r.height/2)*.35, duration:.3});
