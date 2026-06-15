@@ -103,6 +103,14 @@ section{padding:120px 0}
   box-shadow:0 -18px 50px rgba(0,0,0,.45);
   will-change:transform;
 }
+.card-dots{position:absolute;top:20px;left:24px;display:flex;gap:8px}
+.card-dots span{width:12px;height:12px;border-radius:50%;display:block}
+.dot-red{background:#FF5F57}
+.dot-yellow{background:#FEBC2E}
+.dot-green{background:#28C840}
+.card-logos{display:flex;align-items:center;gap:24px;margin-top:20px}
+.card-logo{height:24px;width:auto;filter:brightness(0) invert(1);opacity:.7;transition:opacity .25s}
+.card-logo:hover{opacity:1}
 .card:nth-child(1){top:96px}
 .card:nth-child(2){top:124px}
 .card:nth-child(3){top:152px}
@@ -120,7 +128,7 @@ section{padding:120px 0}
 /* ---------- EXPERTISE ---------- */
 .tags{display:flex;flex-wrap:wrap;gap:14px;margin-top:54px}
 .tags span{border:1px solid var(--line-dark);border-radius:999px;padding:13px 26px;font-size:16px;font-weight:500;transition:all .25s;cursor:default}
-.tags span:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.tags span:hover{border-color:var(--signal)}
 .tags span.hot{background:var(--signal);border-color:var(--signal);color:#fff}
 .exp-lede{max-width:680px;font-size:19px;color:rgba(14,17,22,.75);margin-top:40px}
 
@@ -245,10 +253,15 @@ section{padding:120px 0}
     <div class="stack">
 
       <div class="card">
+        <div class="card-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
         <div class="meta"><span class="mono">Performance</span>2024, still going</div>
         <div>
           <h3>Media Buyer, B2B Agency</h3>
           <p class="desc">Running paid acquisition for a European performance agency tied to a programmatic DSP. Agency lead gen plus client accounts in iGaming and telecom, all on real tracking instead of vibes.</p>
+          <div class="card-logos">
+            <img src="https://cdn.prod.website-files.com/60859154db955843c7fc06e7/6359392f2beae88991d119ef_Eskim%20logo.svg" alt="Eskimi" class="card-logo">
+            <img src="https://cdn.prod.website-files.com/66e2a9fd6f9bbe971878beae/66fba6e51cb7dc468d75b2b9_logo-black.svg" alt="Roigon" class="card-logo">
+          </div>
         </div>
         <ul>
           <li>Full-funnel <b>Search + PMax + Retargeting</b> architecture</li>
@@ -258,6 +271,7 @@ section{padding:120px 0}
       </div>
 
       <div class="card">
+        <div class="card-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
         <div class="meta"><span class="mono">Product</span>Nights & weekends</div>
         <div>
           <h3>Builder, AI Tools</h3>
@@ -271,6 +285,7 @@ section{padding:120px 0}
       </div>
 
       <div class="card">
+        <div class="card-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
         <div class="meta"><span class="mono">Founder</span>Ongoing</div>
         <div>
           <h3>RizeUp Global</h3>
@@ -284,6 +299,7 @@ section{padding:120px 0}
       </div>
 
       <div class="card">
+        <div class="card-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
         <div class="meta"><span class="mono">Automation</span>Always on</div>
         <div>
           <h3>Systems & Workflows</h3>
