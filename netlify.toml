@@ -1,2 +1,12 @@
 [build]
   publish = "."
+
+[[redirects]]
+  from = "/blog/full-funnel-google-ads-strategy"
+  to = "/blog/full-funnel-google-ads-strategy.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/ai-changing-google-ads"
+  to = "/blog/ai-changing-google-ads.html"
+  status = 200
