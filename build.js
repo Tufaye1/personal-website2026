@@ -58,6 +58,9 @@ function blogTemplate(data, bodyHtml, slug, dateStr) {
 <meta name="description" content="${esc(data.description)}">
 <meta name="author" content="Tufayel Hossain">
 <link rel="canonical" href="/blog/${slug}">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
 <meta property="og:title" content="${esc(data.title)} | Tufayel Hossain">
 <meta property="og:description" content="${esc(data.description)}">
 <meta property="og:type" content="article">
