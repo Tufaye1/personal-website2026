@@ -73,15 +73,7 @@ function blogTemplate(data, bodyHtml, slug, dateStr) {
 <meta name="twitter:title" content="${esc(data.title)} | Tufayel Hossain">
 <meta name="twitter:description" content="${esc(data.description)}">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": ${JSON.stringify(data.title)},
-  "description": ${JSON.stringify(data.description)},
-  "author": {"@type": "Person", "name": "Tufayel Hossain"},
-  "datePublished": "${new Date(data.date).toISOString().split('T')[0]}",
-  "url": "/blog/${slug}"
-}
+${buildJsonLd(data, slug)}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -145,6 +137,30 @@ article code{font-family:'JetBrains Mono',monospace;font-size:14px;background:rg
 
 function esc(s) {
   return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function buildJsonLd(data, slug) {
+  const graph = [
+    {
+      "@type": "BlogPosting",
+      headline: data.title,
+      description: data.description,
+      author: {"@type": "Person", name: "Tufayel Hossain"},
+      datePublished: new Date(data.date).toISOString().split('T')[0],
+      url: "/blog/" + slug
+    }
+  ];
+  if (data.faq && Array.isArray(data.faq) && data.faq.length) {
+    graph.push({
+      "@type": "FAQPage",
+      mainEntity: data.faq.map(f => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: {"@type": "Answer", text: f.a}
+      }))
+    });
+  }
+  return JSON.stringify({"@context": "https://schema.org", "@graph": graph}, null, 2);
 }
 
 function updateIndex(cmsPosts) {

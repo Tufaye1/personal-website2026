@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programmatic Ads vs Google Ads: When to Use Which (From Someone Who Runs Both) | Tufayel Hossain</title>
+<meta name="description" content="A practical breakdown of programmatic advertising versus Google Ads from someone who manages both daily. When to use each, how they work together, inventory differences, budget thresholds, and the real cost comparison.">
+<meta name="author" content="Tufayel Hossain">
+<link rel="canonical" href="/blog/programmatic-ads-vs-google-ads">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<meta property="og:title" content="Programmatic Ads vs Google Ads: When to Use Which (From Someone Who Runs Both) | Tufayel Hossain">
+<meta property="og:description" content="A practical breakdown of programmatic advertising versus Google Ads from someone who manages both daily. When to use each, how they work together, inventory differences, budget thresholds, and the real cost comparison.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/blog/programmatic-ads-vs-google-ads">
+<meta property="article:author" content="Tufayel Hossain">
+<meta property="article:published_time" content="2026-06-20">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Programmatic Ads vs Google Ads: When to Use Which (From Someone Who Runs Both) | Tufayel Hossain">
+<meta name="twitter:description" content="A practical breakdown of programmatic advertising versus Google Ads from someone who manages both daily. When to use each, how they work together, inventory differences, budget thresholds, and the real cost comparison.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Programmatic Ads vs Google Ads: When to Use Which (From Someone Who Runs Both)",
+      "description": "A practical breakdown of programmatic advertising versus Google Ads from someone who manages both daily. When to use each, how they work together, inventory differences, budget thresholds, and the real cost comparison.",
+      "author": {
+        "@type": "Person",
+        "name": "Tufayel Hossain"
+      },
+      "datePublished": "2026-06-20",
+      "url": "/blog/programmatic-ads-vs-google-ads"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is programmatic advertising more expensive than Google Ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not necessarily. Programmatic CPMs typically range from $1-$15, while Google Display Network CPMs often fall between $2-$10. The real comparison is cost per outcome, not cost per impression. Programmatic can be cheaper for brand awareness at scale because you access premium inventory more efficiently. Google Ads tends to be more cost-effective for intent-based conversions because you are reaching people actively searching. The 'more expensive' label usually comes from comparing programmatic brand campaigns to Google search campaigns, which is like comparing the price of a billboard to the price of a flyer. They do different jobs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can small businesses use programmatic advertising?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, but with caveats. Self-serve DSPs like Eskimi have lowered the entry barrier significantly. You can start with budgets of $5k-$10k/month and still reach meaningful scale. However, programmatic works best when you have enough budget to let the algorithms optimize and enough audience size to segment effectively. If your total ad budget is under $3k/month, you will likely get more value from focused Google Ads and Meta campaigns. Once you are spending $10k+ monthly and want to expand reach beyond search and social, programmatic becomes a serious option."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the minimum budget for programmatic ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most DSPs have minimum campaign budgets ranging from $500 to $5,000. But the practical minimum for meaningful results is $5k-$10k per month. Below that, you do not generate enough data for the algorithms to optimize effectively, and your reach will be too limited to draw conclusions. For a proper test, plan to spend $10k-$15k over 2-3 months on a focused campaign with clear KPIs. This gives you enough impressions to optimize creative, enough conversions to evaluate performance, and enough time to iterate. Going in with less usually results in inconclusive data and the false conclusion that 'programmatic does not work for us.'"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0E1116;--ink-2:#161B23;--bone:#E9E4D8;--signal:#FF4B26;--slate:#8B93A1;--line:rgba(233,228,216,.14)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--bone);font-family:'Archivo',sans-serif;line-height:1.7}
+a{color:inherit;text-decoration:none}
+.nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 5vw;background:rgba(14,17,22,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav a{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--slate);transition:color .2s}
+.nav a:hover{color:var(--bone)}
+.nav .brand{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;color:var(--bone);letter-spacing:.04em}
+.wrap{max-width:720px;margin:0 auto;padding:80px 24px 120px}
+.meta-bar{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:40px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--slate)}
+.meta-bar .tag{color:var(--signal);border:1px solid var(--signal);border-radius:6px;padding:3px 10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+h1{font-family:'Anton',sans-serif;font-size:clamp(32px,5vw,56px);text-transform:uppercase;line-height:1.1;margin-bottom:20px}
+article h2{font-family:'Anton',sans-serif;font-size:clamp(22px,3vw,32px);text-transform:uppercase;margin:48px 0 16px;color:var(--bone)}
+article h3{font-size:20px;font-weight:600;margin:32px 0 12px;color:var(--bone)}
+article p{color:var(--slate);margin-bottom:20px;font-size:17px}
+article ul,article ol{color:var(--slate);margin:0 0 20px 24px;font-size:17px}
+article li{margin-bottom:8px}
+article strong,article b{color:var(--bone);font-weight:600}
+article blockquote{border-left:3px solid var(--signal);padding:16px 24px;margin:28px 0;background:rgba(255,255,255,.03);border-radius:0 12px 12px 0}
+article blockquote p{margin:0;color:var(--bone);font-style:italic}
+article code{font-family:'JetBrains Mono',monospace;font-size:14px;background:rgba(255,255,255,.06);padding:2px 8px;border-radius:4px}
+.author-box{margin-top:64px;padding:32px;border:1px solid var(--line);border-radius:16px;display:flex;gap:20px;align-items:center}
+.author-avatar{width:56px;height:56px;border-radius:50%;background:var(--signal);display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:22px;color:#fff;flex-shrink:0}
+.author-box .name{font-weight:600;color:var(--bone);margin-bottom:4px}
+.author-box .role{font-size:14px;color:var(--slate)}
+.author-box a{color:var(--signal);font-size:14px;font-family:'JetBrains Mono',monospace}
+.footer{text-align:center;padding:24px;color:var(--slate);font-size:13px;border-top:1px solid var(--line);margin-top:80px}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="/">&larr; Back to tufayel.com</a>
+  <span class="brand">Tufayel</span>
+</nav>
+<div class="wrap">
+  <div class="meta-bar">
+    <span class="tag">Programmatic</span>
+    <span>Jun 20, 2026</span>
+    <span>9 min read</span>
+  </div>
+  <h1>Programmatic Ads vs Google Ads: When to Use Which (From Someone Who Runs Both)</h1>
+  <article><p>Programmatic ads and Google Ads are not competitors. They are complementary channels that serve different purposes at different stages of the customer journey. Programmatic advertising uses automated technology to buy display, video, audio, and connected TV inventory across the open internet, while Google Ads primarily captures intent through search and reaches users across Google's owned properties. The short answer to "which should I use" is usually "both, but for different reasons." Programmatic excels at reaching specific audiences at scale with brand and awareness messaging. Google Ads excels at capturing demand from people actively searching for what you sell.</p>
+<p>I run both every single day. At Eskimi, I work inside a DSP (demand-side platform) building programmatic campaigns across display, video, CTV, and DOOH. Through my agency Truman, I manage Google Ads accounts across search, shopping, display, and Performance Max. Seeing both sides of the equation daily gives me a perspective that most marketers operating in just one channel do not have.</p>
+<p>Let me break down what each actually is, when each wins, and how to run them together.</p>
+<h2>What Programmatic Actually Means (The Jargon, Decoded)</h2>
+<p>Programmatic advertising is not a single platform. It is a method of buying ad inventory using automated technology. Here are the pieces:</p>
+<p><strong>DSP (Demand-Side Platform):</strong> This is where advertisers buy inventory. Platforms like Eskimi, The Trade Desk, DV360, and Amazon DSP are DSPs. Think of it as the "ad account" equivalent of Google Ads, but instead of buying space on Google, you are buying space across thousands of websites, apps, streaming services, and connected devices.</p>
+<p><strong>SSP (Supply-Side Platform):</strong> This is the sell side. Publishers use SSPs to make their ad inventory available to buyers. When a website shows you a banner ad, an SSP likely helped sell that impression.</p>
+<p><strong>RTB (Real-Time Bidding):</strong> This is the auction mechanism. When a user loads a webpage, an auction happens in milliseconds. DSPs bid on the impression based on the user's profile, the advertiser's targeting criteria, and the bid strategy. The winning bid gets to show the ad. This entire process takes about 100 milliseconds. Faster than a blink.</p>
+<p><strong>Ad Exchange:</strong> The marketplace where DSPs and SSPs connect. It is the infrastructure that makes RTB possible.</p>
+<p>The key insight: programmatic is not a channel. It is a buying method that gives you access to channels. Display, video, audio, CTV, digital out-of-home. All of these can be bought programmatically.</p>
+<h2>How Google Ads Differs (It Is Not What You Think)</h2>
+<p>Google Ads is both simpler and more complex than programmatic. Simpler because it is a single platform with a unified interface. More complex because it actually contains multiple distinct advertising products:</p>
+<p><strong>Search:</strong> Text ads that appear when someone searches on Google. This is intent-based advertising at its purest. Someone types "best CRM for small business" and your ad appears. This is demand capture, not demand creation.</p>
+<p><strong>Display (GDN):</strong> Banner ads across Google's network of partner websites. This is Google's version of programmatic display, but limited to sites in the Google Display Network.</p>
+<p><strong>YouTube:</strong> Video ads on the world's second-largest search engine. Pre-roll, mid-roll, bumper ads. Powerful for brand awareness and remarketing.</p>
+<p><strong>Shopping:</strong> Product listing ads for ecommerce. Shows your product image, price, and store name directly in search results.</p>
+<p><strong>Performance Max:</strong> Google's <a href="/blog/ai-changing-google-ads">AI-driven campaign type</a> that runs across all Google surfaces simultaneously. It uses machine learning to optimize placement, creative, and bidding across search, display, YouTube, Gmail, and Discover.</p>
+<p>The critical distinction: Google Ads is a walled garden. You are buying inventory on Google's owned and operated properties, plus their partner network. Programmatic gives you the open internet.</p>
+<h2>When Programmatic Wins</h2>
+<p>There are specific scenarios where programmatic advertising is clearly the better choice:</p>
+<h3>1. Brand Awareness at Scale</h3>
+<p>If you need to reach millions of people with a brand message, programmatic is your tool. The inventory pool is massive. You can run across thousands of premium publishers, CTV apps, podcasts, and digital billboards simultaneously. Google Display Network has scale, but programmatic gives you access to premium placements that are not available through GDN, including sites that do not participate in Google's network.</p>
+<h3>2. Specific Audience Targeting Beyond Search Intent</h3>
+<p>Programmatic DSPs offer targeting capabilities that Google simply does not match. Want to reach C-suite executives at companies with 500+ employees in the manufacturing sector? Programmatic data providers can build that audience. Want to target people who have visited a specific physical location? Programmatic can do that too.</p>
+<p>The layering is where it gets powerful. You can combine demographic data, behavioral data, contextual signals, and first-party data in ways that Google's targeting options do not support.</p>
+<h3>3. Connected TV and Audio</h3>
+<p>If your audience watches streaming content or listens to digital audio, programmatic is currently the primary buying method. You can run 15-second or 30-second video ads on Hulu, Peacock, Tubi, and hundreds of other streaming apps through a DSP. Google has YouTube, which is massive, but it is one platform. Programmatic gives you the rest of the streaming landscape.</p>
+<h3>4. Cross-Channel Frequency Management</h3>
+<p>When you run programmatic, you can manage frequency across display, video, CTV, and audio from a single platform. This means you control how many times a user sees your brand across all touchpoints. With Google Ads, frequency management is limited to within-campaign or within-channel controls.</p>
+<h3>5. Premium Inventory and Direct Deals</h3>
+<p>Through programmatic, you can set up private marketplace (PMP) deals with specific publishers. Want your ads on The New York Times, ESPN, or a niche industry publication? PMPs let you negotiate directly while still using the automated buying infrastructure. GDN does not offer this level of publisher-specific control.</p>
+<h2>When Google Ads Wins</h2>
+<p>Google Ads has clear advantages in several scenarios:</p>
+<h3>1. Intent Capture (Search)</h3>
+<p>Nothing beats search advertising for capturing existing demand. When someone types "buy running shoes size 10" into Google, they are ready to purchase. No programmatic campaign can match this level of intent. If you sell something people actively search for, Google Search should be your foundation.</p>
+<p>This is the core of any solid <a href="/blog/full-funnel-google-ads-strategy">full-funnel strategy</a>. Search captures the demand that your other channels create.</p>
+<h3>2. Ecommerce and Shopping</h3>
+<p>Google Shopping ads are purpose-built for ecommerce. Product images, prices, reviews, all displayed directly in search results. The <a href="/blog/google-ads-account-structure-ecommerce">account structure for ecommerce</a> on Google is mature and well-documented. Programmatic can support ecommerce through retargeting and prospecting, but the direct purchase intent lives in Google Shopping.</p>
+<h3>3. Lower Budgets</h3>
+<p>Google Ads has a lower barrier to entry. You can start a meaningful search campaign with $1k-$2k/month and see results. Programmatic typically needs $5k-$10k/month minimum to generate enough data for optimization. For businesses with limited budgets, Google Ads usually delivers more learning per dollar.</p>
+<h3>4. Simpler Setup and Management</h3>
+<p>One platform, one interface, one billing relationship. Google Ads is easier to set up, easier to learn, and has more educational resources available. If you are a small team without programmatic experience, Google Ads is the practical choice. Programmatic requires understanding of DSP mechanics, deal setup, creative specifications across multiple formats, and more complex measurement.</p>
+<h3>5. Local and Small Business Advertising</h3>
+<p>If you are a local business targeting customers within a specific radius, Google Search and Local campaigns are purpose-built for you. Programmatic can do geo-targeting, but the intent signal from local search ("plumber near me") combined with Google's location data creates a powerful combination for local businesses.</p>
+<h2>How to Run Both Together</h2>
+<p>The real magic happens when you use both channels as parts of a single strategy. Here is how I structure it for clients:</p>
+<h3>The Awareness-to-Conversion Pipeline</h3>
+<p><strong>Programmatic (Top of Funnel):</strong> Run brand awareness campaigns using CTV, video, and high-impact display. Target broad audiences that match your ideal customer profile. Measure reach, frequency, and brand lift.</p>
+<p><strong>Programmatic (Mid Funnel):</strong> Retarget users who engaged with your top-of-funnel campaigns. Use sequential messaging to move them from awareness to consideration. Add contextual targeting on relevant content sites.</p>
+<p><strong>Google Ads (Bottom of Funnel):</strong> Capture the demand you created. Run search campaigns on branded and category keywords. Use remarketing lists for search ads (RLSA) to bid higher on users who have already seen your programmatic campaigns.</p>
+<p><strong>Google Shopping (Conversion):</strong> For ecommerce, Shopping ads close the loop. Users who were exposed to programmatic brand campaigns and then search for your product category see your Shopping ads with strong brand recall already built.</p>
+<h3>The Measurement Bridge</h3>
+<p>One of the biggest challenges of running both channels is attribution. Google Ads will take credit for conversions that programmatic helped create. Programmatic will claim view-through conversions that may or may not have influenced the purchase.</p>
+<p>Here is what I do: I look at incrementality. When I turn programmatic on, do branded searches in Google Ads increase? When I pause programmatic, do Google Ads conversion rates drop? This lift analysis is more valuable than any single-platform attribution report.</p>
+<p>I also use blended metrics. Total marketing spend divided by total conversions gives you a blended CPA. If blended CPA improves when both channels run versus Google alone, the combination is working.</p>
+<h3>Budget Allocation Framework</h3>
+<p>For a company new to programmatic, I typically recommend starting with a 70/30 split: 70% Google Ads, 30% programmatic. This keeps your proven channel well-funded while giving programmatic enough budget to deliver meaningful results.</p>
+<p>As you see the channels working together (branded search volume increasing, blended CPA improving), you can shift toward a 50/50 or even 40/60 split, depending on where you see the most efficient growth.</p>
+<h2>The Eskimi Perspective</h2>
+<p>I work at Eskimi, so I will be transparent about my bias. But here is what I genuinely believe after running campaigns on multiple DSPs: the programmatic industry has a complexity problem. Too many platforms make it intimidating for marketers who did not grow up in the ecosystem.</p>
+<p>Self-serve DSPs like Eskimi are solving this by making programmatic accessible to performance marketers who already know how to run campaigns on Google or Meta. The mechanics are similar: set targeting, upload creative, set a bid strategy, launch. The difference is the inventory and the scale.</p>
+<p>The marketers who thrive in 2026 are the ones who can operate across both ecosystems. Search and social for demand capture. Programmatic for demand creation and full-funnel reach. If you only know one side, you are leaving money on the table.</p>
+<h2>Making the Decision</h2>
+<p>Here is a simple framework:</p>
+<p><strong>Use only Google Ads if:</strong> Your budget is under $5k/month, you sell something people search for, and you need direct-response results quickly.</p>
+<p><strong>Add programmatic if:</strong> Your Google Ads are performing well but growth is plateauing, you need to reach audiences outside of search, you want to build brand awareness at scale, or you are targeting specific B2B audiences with complex profiles.</p>
+<p><strong>Lead with programmatic if:</strong> You are launching a new brand, your product category has low search volume, you need mass reach in specific geographies, or you are running a multi-channel campaign across CTV, audio, display, and video.</p>
+<p><strong>Use both from the start if:</strong> You have $20k+ monthly budget, you understand the full funnel, and you want to control the customer journey from first impression to conversion.</p>
+<p>The channels are not in competition. They are teammates. The best media plans use each one for what it does best and measure the combined impact, not just the individual platform reports.</p>
+<h2>Is programmatic advertising more expensive than Google Ads?</h2>
+<p>The "programmatic is expensive" reputation comes from comparing apples to oranges. Programmatic CPMs (cost per thousand impressions) range from $1 for run-of-network display to $30+ for premium CTV inventory. Google Search CPCs can range from $0.50 to $50+ depending on the keyword.</p>
+<p>The fair comparison is cost per business outcome. For brand awareness objectives, programmatic often delivers cheaper reach than Google Display because it accesses a broader pool of inventory. For direct-response conversion objectives, Google Search typically delivers lower cost per conversion because the intent signal is stronger.</p>
+<p>When you run both together, the real question is not which is cheaper per click or per impression. It is whether the combination produces better business results at a lower blended cost than either channel alone. In my experience, it almost always does, because programmatic creates demand that Google Search captures.</p>
+<h2>Can small businesses use programmatic advertising?</h2>
+<p>Yes, and it has gotten significantly easier. Five years ago, programmatic required large minimum budgets and an agency or trading desk to manage. Today, self-serve DSPs have lowered the entry barrier to budgets as small as $5k/month.</p>
+<p>That said, small businesses should be strategic about when they enter programmatic. If your total monthly ad budget is under $5k, focus on Google Search and Meta first. These platforms are more forgiving at lower budgets and give you faster learning cycles.</p>
+<p>Once you are spending $10k+ monthly and have a proven Google Ads foundation, adding programmatic makes sense. Start with a specific objective: maybe retargeting your website visitors across the open web, or running CTV ads in your local market. Do not try to do everything at once.</p>
+<p>The key is having clear KPIs and realistic expectations. Programmatic brand campaigns are not going to deliver the same last-click CPA as Google Search. But they will expand your reach, build brand recognition, and ultimately make your Google campaigns perform better.</p>
+<h2>What's the minimum budget for programmatic ads?</h2>
+<p>The platform minimum varies. Some DSPs allow campaigns starting at $500. Eskimi and other self-serve platforms have accessible entry points. But platform minimums and practical minimums are different things.</p>
+<p>For meaningful programmatic results, budget $5k-$10k per month minimum. Below that threshold, you run into two problems. First, the optimization algorithms need volume to learn. With too few impressions, the system cannot identify which targeting, creative, and placement combinations work best. Second, your reach will be so limited that you cannot draw reliable conclusions about performance.</p>
+<p>For a proper programmatic test, I recommend $10k-$15k over a 2-3 month period focused on a single objective with clear KPIs. This gives the algorithms enough data to optimize, gives you enough conversions to evaluate ROI, and gives you enough time to iterate on creative and targeting. Going in with less often leads to the wrong conclusion that "programmatic did not work" when the real issue was insufficient data.</p>
+</article>
+  <div class="author-box">
+    <div class="author-avatar">T</div>
+    <div>
+      <div class="name">Tufayel Hossain</div>
+      <div class="role">Full-Funnel Performance Marketer & Growth Consultant</div>
+      <a href="/">tufayel.com &rarr;</a>
+    </div>
+  </div>
+</div>
+<div class="footer">&copy; 2026 Tufayel Hossain</div>
+</body>
+</html>

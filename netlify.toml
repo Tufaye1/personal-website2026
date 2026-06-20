@@ -20,3 +20,33 @@
   from = "/blog/ai-changing-google-ads"
   to = "/blog/ai-changing-google-ads.html"
   status = 200
+
+[[redirects]]
+  from = "/blog/google-ads-attribution-model-guide"
+  to = "/blog/google-ads-attribution-model-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/programmatic-ads-vs-google-ads"
+  to = "/blog/programmatic-ads-vs-google-ads.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/how-to-hire-performance-marketer"
+  to = "/blog/how-to-hire-performance-marketer.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/performance-max-best-practices-2026"
+  to = "/blog/performance-max-best-practices-2026.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/google-ads-account-structure-ecommerce"
+  to = "/blog/google-ads-account-structure-ecommerce.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog/server-side-tracking-google-ads"
+  to = "/blog/server-side-tracking-google-ads.html"
+  status = 200

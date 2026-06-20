@@ -17,4 +17,11 @@ collections:
       - { label: "Tag", name: "tag", widget: "string", default: "Marketing" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Reading Time", name: "reading_time", widget: "string", default: "5 min read" }
+      - label: "FAQ (for SEO schema)"
+        name: "faq"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Question", name: "q", widget: "string" }
+          - { label: "Answer", name: "a", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }

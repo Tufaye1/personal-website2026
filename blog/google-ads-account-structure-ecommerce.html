@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Ads Account Structure for Ecommerce: The Architecture That Scales | Tufayel Hossain</title>
+<meta name="description" content="The right Google Ads account structure for ecommerce separates branded from non-branded, tiers search by intent, and uses PMax strategically. Here's the architecture that scales from $5K to $500K/month.">
+<meta name="author" content="Tufayel Hossain">
+<link rel="canonical" href="/blog/google-ads-account-structure-ecommerce">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<meta property="og:title" content="Google Ads Account Structure for Ecommerce: The Architecture That Scales | Tufayel Hossain">
+<meta property="og:description" content="The right Google Ads account structure for ecommerce separates branded from non-branded, tiers search by intent, and uses PMax strategically. Here's the architecture that scales from $5K to $500K/month.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/blog/google-ads-account-structure-ecommerce">
+<meta property="article:author" content="Tufayel Hossain">
+<meta property="article:published_time" content="2026-06-17">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Google Ads Account Structure for Ecommerce: The Architecture That Scales | Tufayel Hossain">
+<meta name="twitter:description" content="The right Google Ads account structure for ecommerce separates branded from non-branded, tiers search by intent, and uses PMax strategically. Here's the architecture that scales from $5K to $500K/month.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Google Ads Account Structure for Ecommerce: The Architecture That Scales",
+      "description": "The right Google Ads account structure for ecommerce separates branded from non-branded, tiers search by intent, and uses PMax strategically. Here's the architecture that scales from $5K to $500K/month.",
+      "author": {
+        "@type": "Person",
+        "name": "Tufayel Hossain"
+      },
+      "datePublished": "2026-06-17",
+      "url": "/blog/google-ads-account-structure-ecommerce"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Should I use one campaign or multiple for ecommerce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multiple, always. At minimum you need separate campaigns for branded search, non-branded search, and Shopping/PMax. This gives you independent budget control and bidding for each intent tier. A single campaign forces Google to allocate budget across fundamentally different conversion behaviors, and it will default to the easiest conversions (branded) every time, starving your prospecting efforts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I structure Google Ads for a Shopify store?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The structure is the same regardless of platform. Start with three campaigns: branded search, non-branded search tiered by intent, and Performance Max with brand exclusions. Feed your product data through Google Merchant Center (Shopify's native integration works fine). The Shopify-specific consideration is tracking. Use Shopify's native Google channel for basic setup, but layer server-side tracking on top for accurate conversion data. Don't rely solely on Shopify's built-in pixel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I consolidate campaigns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Consolidate when individual campaigns don't generate enough conversion volume for Smart Bidding to learn, typically fewer than 15-30 conversions per month per campaign. Also consolidate when you're splitting campaigns by arbitrary criteria (like individual product categories with similar ROAS targets) rather than by strategic differences in bidding or budget needs. The rule: if two campaigns have the same goal, same ROAS target, and could share budget without issue, merge them."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0E1116;--ink-2:#161B23;--bone:#E9E4D8;--signal:#FF4B26;--slate:#8B93A1;--line:rgba(233,228,216,.14)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--bone);font-family:'Archivo',sans-serif;line-height:1.7}
+a{color:inherit;text-decoration:none}
+.nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 5vw;background:rgba(14,17,22,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav a{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--slate);transition:color .2s}
+.nav a:hover{color:var(--bone)}
+.nav .brand{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;color:var(--bone);letter-spacing:.04em}
+.wrap{max-width:720px;margin:0 auto;padding:80px 24px 120px}
+.meta-bar{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:40px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--slate)}
+.meta-bar .tag{color:var(--signal);border:1px solid var(--signal);border-radius:6px;padding:3px 10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+h1{font-family:'Anton',sans-serif;font-size:clamp(32px,5vw,56px);text-transform:uppercase;line-height:1.1;margin-bottom:20px}
+article h2{font-family:'Anton',sans-serif;font-size:clamp(22px,3vw,32px);text-transform:uppercase;margin:48px 0 16px;color:var(--bone)}
+article h3{font-size:20px;font-weight:600;margin:32px 0 12px;color:var(--bone)}
+article p{color:var(--slate);margin-bottom:20px;font-size:17px}
+article ul,article ol{color:var(--slate);margin:0 0 20px 24px;font-size:17px}
+article li{margin-bottom:8px}
+article strong,article b{color:var(--bone);font-weight:600}
+article blockquote{border-left:3px solid var(--signal);padding:16px 24px;margin:28px 0;background:rgba(255,255,255,.03);border-radius:0 12px 12px 0}
+article blockquote p{margin:0;color:var(--bone);font-style:italic}
+article code{font-family:'JetBrains Mono',monospace;font-size:14px;background:rgba(255,255,255,.06);padding:2px 8px;border-radius:4px}
+.author-box{margin-top:64px;padding:32px;border:1px solid var(--line);border-radius:16px;display:flex;gap:20px;align-items:center}
+.author-avatar{width:56px;height:56px;border-radius:50%;background:var(--signal);display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:22px;color:#fff;flex-shrink:0}
+.author-box .name{font-weight:600;color:var(--bone);margin-bottom:4px}
+.author-box .role{font-size:14px;color:var(--slate)}
+.author-box a{color:var(--signal);font-size:14px;font-family:'JetBrains Mono',monospace}
+.footer{text-align:center;padding:24px;color:var(--slate);font-size:13px;border-top:1px solid var(--line);margin-top:80px}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="/">&larr; Back to tufayel.com</a>
+  <span class="brand">Tufayel</span>
+</nav>
+<div class="wrap">
+  <div class="meta-bar">
+    <span class="tag">Google Ads</span>
+    <span>Jun 17, 2026</span>
+    <span>10 min</span>
+  </div>
+  <h1>Google Ads Account Structure for Ecommerce: The Architecture That Scales</h1>
+  <article><p>The best Google Ads account structure for ecommerce separates branded from non-branded traffic, tiers search campaigns by purchase intent, uses Performance Max with brand exclusions for Shopping, and keeps budgets independent so you can scale prospecting without cannibalizing what's already working. That's the short answer. If you want the full architecture with the reasoning behind every decision, keep reading.</p>
+<p>I've built and rebuilt this structure across ecommerce accounts spending $5K/month all the way up to $500K/month at Eskimi and through my agency Truman. The details shift depending on catalog size, margin structure, and growth goals. But the foundational architecture stays remarkably consistent, because it's built around how Google's algorithms actually process signal, not around how the platform's default setup wizard wants you to organize things.</p>
+<h2>The Core Principle: Structure Around Intent, Not Products</h2>
+<p>The biggest mistake in ecommerce account structure is organizing campaigns by product category. You end up with a campaign for "Men's Shoes," another for "Women's Shoes," another for "Accessories," and so on. This feels logical from a merchandising perspective. It's terrible from a bidding perspective.</p>
+<p>Here's why. A user searching "Nike Air Max 90 black size 11" has completely different intent than someone searching "comfortable running shoes for flat feet." Both might land in your "Men's Shoes" campaign. But the first query converts at 12% and the second at 2%. They need different bids, different ROAS targets, and probably different landing pages. Lumping them together forces Smart Bidding to find an average bid for wildly different conversion rates.</p>
+<p>Instead, structure around intent tiers. High intent (branded, specific product searches), mid intent (category and comparison searches), and low intent (broad awareness and competitor terms). Each tier gets its own campaign with its own budget and bidding strategy. Products flow across tiers naturally based on the queries that trigger them.</p>
+<h2>The Architecture</h2>
+<p>Here's the full structure I use for most ecommerce accounts. Adjust based on your catalog size and spend level.</p>
+<h3>Tier 1: Branded Search</h3>
+<p><strong>Campaign type:</strong> Search
+<strong>Bidding:</strong> Maximize Conversions or Target ROAS (depending on volume)
+<strong>Budget:</strong> Uncapped (within reason)</p>
+<p>This captures everyone searching for your brand name. It's your cheapest, highest-converting traffic. Seems simple, but people mess this up in two ways.</p>
+<p>First, they don't run branded search at all because "we rank #1 organically anyway." Sure. But competitor ads sit above your organic listing. Without brand campaigns, competitors siphon 10-15% of your brand traffic. The CPCs are $0.10-0.50. Just run it.</p>
+<p>Second, they dump branded terms into the same campaign as non-branded. This inflates non-branded performance metrics, making it impossible to evaluate actual prospecting effectiveness. It also lets Smart Bidding lean on easy branded conversions instead of working harder on the non-branded terms.</p>
+<p>Keep branded search isolated. Give it its own budget. Let it do its thing. This is a defensive campaign, not a growth campaign.</p>
+<h3>Tier 2: Non-Branded Search (High Intent)</h3>
+<p><strong>Campaign type:</strong> Search
+<strong>Bidding:</strong> Target ROAS or Target CPA
+<strong>Budget:</strong> Scaled based on ROAS targets</p>
+<p>These are the money keywords. Product-specific searches, "buy" and "shop" intent, comparison queries where someone is actively choosing between options. Examples: "buy ceramic cookware set," "best noise cancelling headphones under $300," "organic cotton sheets queen."</p>
+<p>Use exact and phrase match keywords. Build tight ad groups around product categories or use cases. Write ads that match the specific intent (someone searching for a specific product wants price and availability, not your brand story).</p>
+<p>This tier usually delivers your best non-branded ROAS. Scale it first before expanding into lower intent tiers.</p>
+<h3>Tier 3: Non-Branded Search (Mid Intent)</h3>
+<p><strong>Campaign type:</strong> Search
+<strong>Bidding:</strong> Target ROAS (usually a lower target than Tier 2)
+<strong>Budget:</strong> Controlled, scaled based on incrementality</p>
+<p>These are category-level and informational-with-commercial-intent queries. "Best cookware materials," "how to choose running shoes," "types of bed sheets." The user isn't ready to buy this second, but they're researching with purchase intent.</p>
+<p>This tier feeds your funnel. Lower conversion rate, higher volume, lower ROAS, but it drives new customer acquisition. Without it, you're only capturing demand, never creating it.</p>
+<p>I wrote about how this fits into the broader funnel in my <a href="/blog/full-funnel-google-ads-strategy">full-funnel Google Ads strategy</a> guide. The mid-intent tier is where most ecommerce accounts have the biggest growth opportunity.</p>
+<h3>Tier 4: Performance Max (with Brand Exclusions)</h3>
+<p><strong>Campaign type:</strong> Performance Max
+<strong>Bidding:</strong> Target ROAS
+<strong>Budget:</strong> Significant (this is your primary Shopping + Display + YouTube channel)</p>
+<p>Performance Max is where your product feed lives. It runs across Shopping, Display, YouTube, Discover, Gmail, and Search (if you let it). For ecommerce, it's essentially replaced Standard Shopping for most accounts.</p>
+<p>The critical setup detail: <strong>exclude your brand terms</strong>. PMax will happily spend your entire budget on branded searches if you let it, because those convert easily and make PMax look brilliant. Use the brand exclusion list in PMax settings to force it to earn its keep on non-branded traffic.</p>
+<p>I've covered PMax setup in detail in my <a href="/blog/performance-max-best-practices-2026">Performance Max best practices</a> guide, including the specific exclusions and asset group strategies that actually work. But the structural decision is this: PMax gets its own budget, separate from search, so you can scale both channels independently.</p>
+<h3>Tier 5: Remarketing</h3>
+<p><strong>Campaign type:</strong> Display Remarketing + RLSA (Remarketing Lists for Search Ads)
+<strong>Bidding:</strong> Target CPA or Maximize Conversions
+<strong>Budget:</strong> 10-20% of total spend</p>
+<p>Don't let PMax handle all your remarketing. Yes, PMax does remarketing. No, you can't control it. A dedicated remarketing campaign lets you set specific frequency caps, creative sequences, and audience windows that PMax's black box doesn't expose.</p>
+<p>Segment your remarketing lists:</p>
+<ul>
+<li>Cart abandoners (7 days): highest priority, highest bids</li>
+<li>Product viewers (14 days): medium priority</li>
+<li>All visitors (30 days): lower priority</li>
+<li>Customer list (purchasers for cross-sell): separate treatment</li>
+</ul>
+<p>RLSA (remarketing lists applied to search campaigns) is underrated. Adding audience lists to your Tier 2 and 3 search campaigns with bid adjustments lets you bid more aggressively on non-branded keywords when the user has already visited your site. The conversion rate difference is massive.</p>
+<h3>Tier 6: Prospecting (YouTube, Display, Demand Gen)</h3>
+<p><strong>Campaign type:</strong> Demand Gen or Video campaigns
+<strong>Bidding:</strong> Maximize Conversions or Target CPA
+<strong>Budget:</strong> 5-15% of total spend (scale up once unit economics prove out)</p>
+<p>This is your top-of-funnel. Brand awareness. New audience acquisition. The campaigns here have the worst direct ROAS, and that's fine, because they feed the mid-funnel and branded search tiers with new audiences.</p>
+<p>Measure these campaigns on view-through metrics and new customer rate, not last-click ROAS. If you hold them to the same ROAS target as your branded search campaign, you'll kill them immediately and then wonder why branded search volume plateaued.</p>
+<h2>Budget Allocation Framework</h2>
+<p>Here's the starting split I recommend for a scaling ecommerce account:</p>
+<ul>
+<li><strong>Branded Search:</strong> 10-15% (let this float based on brand search volume)</li>
+<li><strong>Non-Branded Search (High Intent):</strong> 25-30%</li>
+<li><strong>Non-Branded Search (Mid Intent):</strong> 10-15%</li>
+<li><strong>Performance Max:</strong> 25-35%</li>
+<li><strong>Remarketing:</strong> 10-15%</li>
+<li><strong>Prospecting:</strong> 5-15%</li>
+</ul>
+<p>This is a starting point. Shift based on your margins, growth goals, and what the data tells you. A brand trying to grow aggressively should push more into prospecting and mid-intent. A brand optimizing for profitability should consolidate into high-intent search and PMax.</p>
+<p>The key: these budgets must be independent. Shared budgets across campaigns with different intent levels are the fastest way to destroy your structure's effectiveness. Google will always default to spending where conversions are easiest, which means branded traffic eats everything.</p>
+<h2>Campaign Segmentation Logic: When to Split vs. Consolidate</h2>
+<p>This is where accounts get bloated or too thin. The decision framework:</p>
+<p><strong>Split campaigns when:</strong></p>
+<ul>
+<li>You need different ROAS/CPA targets (branded vs non-branded obviously need different targets)</li>
+<li>You need independent budget control (your search budget shouldn't dictate your PMax budget)</li>
+<li>Performance varies dramatically and you need to bid differently (high-margin vs low-margin products)</li>
+<li>You're in different geographic markets with different competitive dynamics</li>
+</ul>
+<p><strong>Consolidate campaigns when:</strong></p>
+<ul>
+<li>Individual campaigns don't get 15-30+ conversions per month (Smart Bidding needs volume to learn)</li>
+<li>You're splitting by arbitrary product categories that have similar conversion dynamics</li>
+<li>You have the same ROAS target and could share budget without issue</li>
+<li>Granularity is giving you more control than you actually use</li>
+</ul>
+<p>The sweet spot for most ecommerce accounts spending $20K-$100K/month is 6-10 campaigns. Under $20K, you might run 4-5. Over $100K, you might need 12-15. But I've seen accounts with 50+ campaigns spending $30K/month, and they're all starved of data.</p>
+<h2>Tracking: The Foundation You Can't Skip</h2>
+<p>None of this structure matters if your conversion tracking is broken. And in 2026, purely client-side tracking misses 20-40% of conversions due to ad blockers, iOS restrictions, and cookie limitations.</p>
+<p>You need <a href="/blog/server-side-tracking-google-ads">server-side tracking</a> in place before you optimize structure. If Smart Bidding is learning from 60% of your actual conversions, it's optimizing toward a distorted picture regardless of how clean your campaign architecture is.</p>
+<p>At minimum: server-side GTM, Enhanced Conversions with hashed email data, and Consent Mode v2 if you operate in the EU. This isn't optional anymore. It's the foundation that makes everything else work.</p>
+<h2>When to Use Standard Shopping vs. Performance Max</h2>
+<p>This is the question I get asked most. The answer has gotten simpler over the last year.</p>
+<p><strong>Use PMax as your primary Shopping channel.</strong> It has access to more inventory (YouTube, Display, Discover) and generally performs well for ecommerce when set up properly (asset groups by category, brand exclusions, strong product feed).</p>
+<p><strong>Use Standard Shopping when you need granular control.</strong> If you have a small catalog (under 50 products) where each product needs specific bid management, Standard Shopping still gives you product-level bidding control that PMax doesn't. Also useful for specific product launches where you want to control exactly how budget is allocated.</p>
+<p><strong>Use both when you need to protect high-priority products.</strong> Run a Standard Shopping campaign for your best sellers at a higher priority, then let PMax pick up everything else. This ensures your top products always get shown while PMax handles the long tail.</p>
+<h2>Scaling the Structure</h2>
+<p>The beauty of this architecture is that it scales in predictable ways.</p>
+<p><strong>Scaling up:</strong> Increase budgets on Tier 2 (high-intent search) first. Then PMax. Then expand Tier 3 keywords. Then increase prospecting. Each tier feeds the one above it, so you're building demand while capturing it.</p>
+<p><strong>Scaling into new markets:</strong> Duplicate the structure per market/language. Don't mix geographies in the same campaigns unless the markets are small enough that consolidation is necessary for data volume. Different markets have different CPCs, conversion rates, and competitive dynamics.</p>
+<p><strong>Scaling with new products:</strong> Add product groups to your PMax asset groups. Add new keyword sets to the appropriate search tier based on intent. The structure accommodates new products without requiring new campaigns.</p>
+<p><strong>Seasonal scaling:</strong> Increase budgets proportionally across tiers during peak seasons. Don't just dump money into PMax during Black Friday. Increase search budgets too, because search intent spikes and you want to capture it directly rather than hoping PMax allocates correctly.</p>
+<p>The goal is a machine where every dollar goes to the right place based on intent, every campaign has enough data to optimize, and you can adjust any lever without breaking the rest of the system.</p>
+<h2>Frequently Asked Questions</h2>
+<h2>Should I use one campaign or multiple for ecommerce?</h2>
+<p>Multiple, always. At bare minimum you need separate campaigns for branded search, non-branded search, and Shopping/Performance Max. This gives you independent budget control and bidding strategies for each intent tier. A single campaign forces Google to allocate budget across fundamentally different conversion behaviors, and it will default to the easiest conversions (branded) every time. That means your prospecting efforts get starved of budget while branded search soaks up everything. Even at low budgets ($3K-5K/month), running three campaigns with $1K-2K each produces better results than a single $5K campaign, because you're making the strategic decisions about budget allocation instead of letting Google's algorithm chase the path of least resistance.</p>
+<h2>How do I structure Google Ads for a Shopify store?</h2>
+<p>The account structure is platform-agnostic. Whether you're on Shopify, WooCommerce, BigCommerce, or a custom build, the campaign architecture stays the same: branded search, tiered non-branded search, PMax with brand exclusions, remarketing, and prospecting. What changes with Shopify is the data layer. Use Shopify's native Google channel integration for your Merchant Center product feed (it handles automatic syncing, pricing updates, and inventory status). But don't rely solely on Shopify's built-in tracking pixel. Layer server-side tracking on top for accurate conversion data. Shopify's checkout sits on a different domain (checkout.shopify.com), which creates cross-domain tracking challenges. Server-side tracking routes through your own domain and eliminates this issue.</p>
+<h2>When should I consolidate campaigns?</h2>
+<p>Consolidate when individual campaigns don't generate enough conversion volume for Smart Bidding to learn effectively. The threshold is roughly 15-30 conversions per month per campaign. Below that, Smart Bidding is essentially guessing. Also consolidate when you've split campaigns by criteria that don't actually require different treatment. If two product category campaigns have the same ROAS target, the same geographic targeting, and could share budget without either suffering, they should be one campaign. The consolidation test is simple: do these campaigns need different bids, different budgets, or different targets? If the answer to all three is no, merge them. The most common over-segmentation I see is splitting by product category when all categories have similar margins and conversion rates. You end up with eight campaigns each getting four conversions per week, and none of them have enough data to optimize.</p>
+</article>
+  <div class="author-box">
+    <div class="author-avatar">T</div>
+    <div>
+      <div class="name">Tufayel Hossain</div>
+      <div class="role">Full-Funnel Performance Marketer & Growth Consultant</div>
+      <a href="/">tufayel.com &rarr;</a>
+    </div>
+  </div>
+</div>
+<div class="footer">&copy; 2026 Tufayel Hossain</div>
+</body>
+</html>
