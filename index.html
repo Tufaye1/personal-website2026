@@ -94,7 +94,11 @@ nav .book-btn{border:1px solid #E9E4D8;border-radius:999px;padding:8px 20px;opac
 @media(max-width:760px){nav ul li:not(:last-child){display:none}}
 
 /* ---------- HERO ---------- */
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.hero-video{position:absolute;inset:0;z-index:0}
+.hero-video video{width:100%;height:100%;object-fit:cover}
+.hero-video::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,17,22,.55) 0%,rgba(14,17,22,.7) 40%,rgba(14,17,22,.92) 100%)}
+.hero-top,.hero-sub,.ticker{position:relative;z-index:1}
 .hero-top{padding:0 5vw;margin-bottom:6vh}
 .hero-roles{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
 .hero-roles span{border:1px solid var(--line);border-radius:999px;padding:8px 18px;font-size:13px;opacity:.9}
@@ -265,6 +269,7 @@ section{padding:120px 0}
   .hero h1{animation:none;color:var(--bone);background:none;-webkit-background-clip:initial}
   .type-line .caret{animation:none}
   .cursor,.cursor-ring{display:none}
+  .hero-video video{display:none}
 }
 </style>
 </head>
@@ -287,6 +292,11 @@ section{padding:120px 0}
 
 <!-- HERO -->
 <header class="hero" id="top">
+  <div class="hero-video">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="hero-video.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="hero-top">
     <div class="hero-roles">
       <span>Performance <b>Marketer</b></span>
