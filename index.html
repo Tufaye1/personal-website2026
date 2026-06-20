@@ -56,6 +56,43 @@
       "provider": {"@type": "Person", "name": "Tufayel Hossain"},
       "areaServed": ["Bangladesh", "Europe", "Global"],
       "serviceType": ["Performance Marketing", "Growth Consulting", "Paid Media Strategy", "AI Marketing Automation"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does a full-funnel performance marketer do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A full-funnel performance marketer builds the entire paid acquisition system from awareness to conversion. This includes prospecting campaigns for new audiences, retargeting for engaged users, and reactivation for past customers, all tied together with proper tracking, attribution, and bid strategy tuned to margin targets rather than vanity ROAS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I choose between Google Ads and Meta Ads for my business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on your funnel stage and product. Google Ads captures existing demand through search intent, making it ideal for high-intent buyers and services. Meta Ads creates demand through visual storytelling, which works better for DTC, ecommerce, and brand-building. Most businesses need both running together with a unified measurement layer to avoid cannibalization."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is server-side tracking and why does it matter for ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Server-side tracking sends conversion data from your server directly to ad platforms like Google and Meta, bypassing browser-based limitations like iOS privacy restrictions, ad blockers, and cookie deprecation. It typically recovers 15-30% of conversions that browser-side pixels miss, giving your bid algorithms better data and improving ROAS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much should I spend on Google Ads to see results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no universal minimum, but most businesses need at least $3,000-5,000 per month to generate statistically meaningful data for optimization. The real question is unit economics: if your customer acquisition cost target allows profitable scaling, spend should increase as fast as your measurement confidence allows. Start with search campaigns on proven keywords, then expand to Performance Max and display as you build conversion history."
+          }
+        }
+      ]
     }
   ]
 }
@@ -240,7 +277,24 @@ section{padding:120px 0}
 .footer-socials a:hover{color:var(--bone);border-color:var(--bone)}
 .footer-bar{border-top:1px solid var(--line);padding:20px 5vw;display:flex;justify-content:space-between;align-items:center;color:var(--slate);font-size:13px}
 .footer-bar .mark{font-family:'Anton',sans-serif;font-size:18px;text-transform:uppercase;letter-spacing:.06em;color:var(--bone);opacity:.5}
-@media(max-width:768px){.footer-top{grid-template-columns:1fr;gap:40px}.footer-links{align-items:flex-start}.footer-socials{flex-wrap:wrap}}
+@media(max-width:768px){.footer-top{grid-template-columns:1fr;gap:40px;padding:56px 5vw 40px}.footer-links{align-items:flex-start}.footer-socials{flex-wrap:wrap}}
+@media(max-width:480px){.footer-bar{flex-direction:column;gap:8px;text-align:center}}
+
+/* ---------- MOBILE (70% of traffic) ---------- */
+@media(max-width:760px){
+  section{padding:72px 0}
+  .hero{gap:28px;padding:80px 5vw 24px}
+  .card:nth-child(1){top:72px}
+  .card:nth-child(2){top:80px}
+  .card:nth-child(3){top:88px}
+  .card:nth-child(4){top:96px}
+  .quote{padding:32px 24px}
+  .blog-card-body{padding:24px 20px 20px}
+  .blog-meta{padding:14px 20px}
+  .about-side{padding-left:20px}
+  .h2{font-size:clamp(36px,9vw,72px)}
+  .eyebrow{margin-bottom:32px}
+}
 
 /* ---------- MORPHING CURSOR ---------- */
 .cursor{position:fixed;top:0;left:0;width:20px;height:20px;border-radius:50%;background:var(--signal);pointer-events:none;z-index:200;transform:translate(-50%,-50%);transition:width .4s cubic-bezier(.23,1,.32,1),height .4s cubic-bezier(.23,1,.32,1),border-radius .4s cubic-bezier(.23,1,.32,1),background .35s ease,opacity .3s}
@@ -541,7 +595,7 @@ section{padding:120px 0}
         <p>Bad fits: anything that starts with "we just need it to go viral."</p>
       </div>
       <div class="reveal calendly-wrap">
-        <div class="calendly-inline-widget" data-url="https://calendly.com/tufayelhossain20/30min?hide_gdpr_banner=1&background_color=0e1116&text_color=e9e4d8&primary_color=ff4b26" style="min-width:320px;height:580px;"></div>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/tufayelhossain20/30min?hide_gdpr_banner=1&background_color=0e1116&text_color=e9e4d8&primary_color=ff4b26" style="min-width:280px;height:630px;"></div>
         <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </div>
     </div>
@@ -558,9 +612,9 @@ section{padding:120px 0}
     <div class="footer-links reveal">
       <a class="footer-email" href="mailto:hello@tufayel.com?subject=Hi%20Tufayel">hello@tufayel.com</a>
       <div class="footer-socials">
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/Tufaye1" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/Tufaye1" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
     </div>
   </div>
@@ -643,17 +697,5 @@ if (fine && !reduced) {
   if (dot) dot.style.display = 'none';
 }
 </script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", function(user) {
-      if (!user) {
-        window.netlifyIdentity.on("login", function() {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </body>
 </html>

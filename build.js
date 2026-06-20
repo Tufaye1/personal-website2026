@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 const { marked } = require('marked');
+const DOMPurify = require('isomorphic-dompurify');
 
 const CONTENT_DIR = path.join(__dirname, 'content', 'blog');
 const BLOG_DIR = path.join(__dirname, 'blog');
@@ -18,8 +19,9 @@ if (fs.existsSync(CONTENT_DIR)) {
   for (const file of files) {
     const raw = fs.readFileSync(path.join(CONTENT_DIR, file), 'utf8');
     const { data, content } = matter(raw);
-    const slug = file.replace('.md', '');
-    const html = marked(content);
+    const slug = file.replace('.md', '').replace(/[^a-z0-9-]/gi, '');
+    if (!slug) { console.warn('Skipping invalid slug: ' + file); continue; }
+    const html = DOMPurify.sanitize(marked(content));
     const date = new Date(data.date);
     const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
@@ -157,8 +159,8 @@ function updateIndex(cmsPosts) {
           <span class="blog-read">Read article &rarr;</span>
         </div>
         <div class="blog-meta">
-          <span>${p.dateStr}</span>
-          <span>${p.reading_time}</span>
+          <span>${esc(p.dateStr)}</span>
+          <span>${esc(p.reading_time)}</span>
         </div>
       </a>`).join('\n');
 
