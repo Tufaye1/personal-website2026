@@ -94,35 +94,21 @@ nav .book-btn{border:1px solid #E9E4D8;border-radius:999px;padding:8px 20px;opac
 @media(max-width:760px){nav ul li:not(:last-child){display:none}}
 
 /* ---------- HERO ---------- */
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
-.hero-video{position:absolute;inset:0;z-index:0}
-.hero-video video{width:100%;height:100%;object-fit:cover}
-.hero-video::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,17,22,.55) 0%,rgba(14,17,22,.7) 40%,rgba(14,17,22,.92) 100%)}
-.hero-top,.hero-sub,.ticker{position:relative;z-index:1}
-.hero-top{padding:0 5vw;margin-bottom:6vh}
-.hero-roles{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
-.hero-roles span{border:1px solid var(--line);border-radius:999px;padding:8px 18px;font-size:13px;opacity:.9}
-.hero-roles span b{color:var(--signal);font-weight:600}
-.hero h1{
-  font-size:clamp(72px,16.5vw,250px);
-  background:linear-gradient(90deg,#E9E4D8 0%,#FF4B26 22%,#FFB36B 38%,#E9E4D8 55%,#FF4B26 78%,#E9E4D8 100%);
-  background-size:220% auto;
-  -webkit-background-clip:text;background-clip:text;
-  color:transparent;
-  animation:flow 7s linear infinite;
-}
-@keyframes flow{to{background-position:220% center}}
-.hero-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;padding:0 5vw;margin-bottom:5vh;flex-wrap:wrap}
-.scroll-btn{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 5vw 4vh;text-decoration:none;color:var(--slate);transition:color .3s}
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:48px;padding:100px 5vw 40px;position:relative}
+.hero-video{width:min(720px,90vw);aspect-ratio:16/9;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 0 1px rgba(233,228,216,.08)}
+.hero-video video{width:100%;height:100%;object-fit:cover;display:block}
+.hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;width:min(720px,90vw);flex-wrap:wrap}
+.hero-bottom p{max-width:420px;color:var(--slate);font-size:17px;line-height:1.65}
+.hero-stats{display:flex;gap:44px;text-align:right}
+.hero-stats .stat b{display:block;font-family:'Anton',sans-serif;font-size:clamp(28px,3.5vw,44px);color:var(--bone);line-height:1}
+.hero-stats .stat span{color:var(--slate);font-size:12px;font-family:'JetBrains Mono',monospace;letter-spacing:.04em}
+.hero-stats .stat b i{color:var(--signal);font-style:normal}
+.scroll-btn{display:flex;flex-direction:column;align-items:center;gap:8px;padding-top:20px;text-decoration:none;color:var(--slate);transition:color .3s}
 .scroll-btn:hover{color:var(--bone)}
 .scroll-text{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
-.scroll-arrow{width:24px;height:24px;border-right:2px solid var(--signal);border-bottom:2px solid var(--signal);transform:rotate(45deg);animation:bounce 2s ease infinite}
+.scroll-arrow{width:20px;height:20px;border-right:2px solid var(--signal);border-bottom:2px solid var(--signal);transform:rotate(45deg);animation:bounce 2s ease infinite}
 @keyframes bounce{0%,20%,50%,80%,100%{transform:rotate(45deg) translateY(0)}40%{transform:rotate(45deg) translateY(8px)}60%{transform:rotate(45deg) translateY(4px)}}
-.hero-sub p{max-width:520px;color:var(--slate);font-size:18px}
-.hero-stats{display:flex;gap:44px;text-align:right}
-.hero-stats .stat b{display:block;font-family:'Anton',sans-serif;font-size:clamp(30px,4vw,48px);color:var(--bone);line-height:1}
-.hero-stats .stat span{color:var(--slate);font-size:13px}
-.hero-stats .stat b i{color:var(--signal);font-style:normal}
+@media(max-width:600px){.hero-bottom{flex-direction:column;align-items:flex-start;gap:24px}.hero-stats{text-align:left}}
 
 /* ---------- TICKER ---------- */
 .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
@@ -269,10 +255,8 @@ section{padding:120px 0}
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1!important;transform:none!important}
   .ticker-track{animation:none}
-  .hero h1{animation:none;color:var(--bone);background:none;-webkit-background-clip:initial}
   .cursor,.cursor-ring{display:none}
   .scroll-arrow{animation:none}
-  .hero-video video{display:none}
 }
 </style>
 </head>
@@ -299,19 +283,11 @@ section{padding:120px 0}
       <source src="hero-video.mp4" type="video/mp4">
     </video>
   </div>
-  <div class="hero-top">
-    <div class="hero-roles">
-      <span>Performance <b>Marketer</b></span>
-      <span>Growth <b>Consultant</b></span>
-      <span>AI Automation <b>Builder</b></span>
-      <span>Occasionally <b>Funny</b></span>
-    </div>
-  </div>
-  <div class="hero-sub">
+  <div class="hero-bottom">
     <p>Full-funnel performance marketer and growth consultant. I architect acquisition systems, build AI-powered marketing tools, and help brands scale paid media profitably.</p>
     <div class="hero-stats">
-      <div class="stat"><b>100<i>+</i></b><span>brands worked with</span></div>
-      <div class="stat"><b>$1M<i>+</i></b><span>in media buying</span></div>
+      <div class="stat"><b>100<i>+</i></b><span>brands</span></div>
+      <div class="stat"><b>$1M<i>+</i></b><span>media bought</span></div>
     </div>
   </div>
   <a href="#about" class="scroll-btn" aria-label="Scroll down"><span class="scroll-arrow"></span><span class="scroll-text">Scroll</span></a>
